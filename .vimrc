@@ -26,7 +26,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'junegunn/limelight.vim'
 
 " Fuzzy search
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install-all' }
 Plug 'junegunn/fzf.vim'
 " {{{
   nmap <c-p> :GFiles<CR>
@@ -37,6 +37,7 @@ Plug 'junegunn/fzf.vim'
         \           : fzf#vim#with_preview('right:50%:hidden', '?'),
         \   <bang>0)
   nmap <leader>a :Rg<space>
+  nmap <leader>b :Buffers<CR>
 " }}}
 
 " File management
@@ -221,7 +222,7 @@ nnoremap ;wq :wq<CR>
 
 " Easier access to vimrc
 nnoremap <leader>ev :e ~/.vimrc<CR>
-nnoremap <leader>sv :source ~/.vimrc
+nnoremap <leader>sv :source ~/.vimrc<CR>
 
 " Color scheme (terminal)
 if (has("termguicolors"))
