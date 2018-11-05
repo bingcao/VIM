@@ -21,6 +21,7 @@ Plug 'romainl/Apprentice'
 Plug 'chrisbra/Colorizer'
 " {{{
   let g:colorizer_auto_filetype='css,less,html,vimrc'
+  let g:colorizer_auto_map=1
 
 " Set focus
 Plug 'junegunn/limelight.vim'
@@ -68,16 +69,17 @@ Plug 'tpope/vim-fugitive'
 " {{{
   nnoremap :ga :Gstatus<CR>
   nnoremap :gc :Gcommit<CR>
+  nnoremap :gb :Gblame<CR>
 " }}}
 Plug 'zivyangll/git-blame.vim'
 
 " Linting
 Plug 'w0rp/ale'
 " {{{
-  let g:ale_fixers = {}
-  let g:ale_fixers['javascript'] = ['prettier']
+  let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier']}
   let g:ale_fix_on_save = 1
   let g:ale_javascript_prettier_use_local_config = 1
+  nmap <silent> <leader>c :ALENext<cr>
 " }}}
 
 " Formatting
